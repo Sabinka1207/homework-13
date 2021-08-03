@@ -69,4 +69,4 @@ var t,e=arguments[3];!function(e,i){"function"==typeof t&&t.amd?t([],function(){
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./css/styles.css");var e=r(require("./js/postAPI")),t=r(require("./js/render"));function r(e){return e&&e.__esModule?e:{default:e}}const s={galleryField:document.querySelector(".gallery"),searchForm:document.querySelector(".search-form"),postsList:document.querySelector(".gallery-list"),onLoadMore:document.querySelector(".load-more")},n=new e.default;function o(e){e.preventDefault(),a(),n.resetPage(),n.query=e.currentTarget.elements.searchQuery.value,n.fetchPosts().then(e=>u(e))}function c(){n.fetchPosts().then(e=>u(e))}function u(e){s.postsList.insertAdjacentHTML("beforeend",(0,t.default)(e))}function a(){s.onLoadMore.classList.add("is-hidden"),s.postsList.innerHTML=""}s.searchForm.addEventListener("submit",o),s.onLoadMore.addEventListener("click",c);
 },{"./css/styles.css":"krre","./js/postAPI":"Q5xv","./js/render":"Barx"}]},{},["Focm"], null)
-//# sourceMappingURL=/homework-13/src.22073d9e.js.map
+//# sourceMappingURL=/homework-13/src.55621580.js.map
