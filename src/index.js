@@ -21,7 +21,7 @@ function onSearch(evt) {
     clearSearchResults()
     postAPI.resetPage();
     postAPI.fetchPosts().then(posts => insertPosts(posts));
-
+    refs.onLoadMore.classList.remove('is-hidden')
 }
 
 
