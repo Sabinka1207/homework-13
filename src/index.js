@@ -15,15 +15,12 @@ refs.searchForm.addEventListener('submit', onSearch);
 refs.onLoadMore.addEventListener('click', onLoadMore)
 
 function onSearch(evt) {
-    evt.preventDefault();
-    refs.onLoadMore.classList.add('is-hidden')
-    postAPI.query = evt.currentTarget.elements.searchQuery.value
+    evt.preventDefault()
     clearSearchResults()
     postAPI.resetPage();
+    postAPI.query = evt.currentTarget.elements.searchQuery.value
     postAPI.fetchPosts().then(posts => insertPosts(posts));
-    refs.onLoadMore.classList.remove('is-hidden')
 }
-
 
 function onLoadMore() {
     postAPI.fetchPosts().then(posts => insertPosts(posts))
@@ -34,5 +31,6 @@ function insertPosts(posts) {
 }
 
 function clearSearchResults() {
+    refs.onLoadMore.classList.add('is-hidden')
     refs.postsList.innerHTML = ""
 }
